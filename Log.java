@@ -47,7 +47,7 @@ public class Log{
 	 */
 	public static Log getDefault(){
 		if(defaultLog == null){
-			new Log(Thread.currentThread().getName());
+			defaultLog = new Log(Thread.currentThread().getName());
 		}
 		return defaultLog;
 	}
@@ -82,9 +82,6 @@ public class Log{
 		this.dir = dir;
 		timestampName();
 		generatePath();
-		if(defaultLog==null){
-			makeDefault();
-		}
 	}
 	private void generatePath(){
 		if(name == null){
